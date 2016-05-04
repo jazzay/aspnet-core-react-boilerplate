@@ -7,20 +7,25 @@ But simplied a bit to stick with pure React for frontend ui with Asp.Net Core us
 
 Getting Started:
 
-1. Clone this repository
-2. From the console run 
+Clone this repository
+```
+git clone https://github.com/jazzay/aspnet-core-react-boilerplate
+```
+From the console run 
 ```
 tsd install
 ```
-3. Followed by
+Followed by
 ```
 npm install
 ```
-4. Then for asp.net do:
+Then for asp.net do:
 ```
 dotnet restore
 dotnet build
 dotnet run
 ```
-5. Navigate to localhost:5000
+Navigate to http://localhost:5000
+
+Enjoy!
 
