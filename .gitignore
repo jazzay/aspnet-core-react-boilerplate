@@ -1,0 +1,23 @@
+# User-specific files
+*.suo
+*.user
+
+# DotNet
+project.lock.json
+
+# Visual Studio 2015 cache/options directory
+.vs/
+/wwwroot/dist/
+
+*.obj
+*.pch
+*.pdb
+
+# The packages folder can be ignored because of Package Restore
+**/packages/*
+
+obj/
+bin/
+node_modules/
+typings/
+orleans.codegen.cs
