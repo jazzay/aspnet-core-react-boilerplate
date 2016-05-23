@@ -2,7 +2,7 @@
 
 This should get you up and running quickly with an Asp.Net Core backend and React frontend app.
 
-This was based of the template located here: https://github.com/aspnet/NodeServices/tree/aspnetcore-rc2-migration
+This was inspired by the templates located here: https://github.com/aspnet/JavaScriptServices/tree/master/samples
 But simplied a bit to stick with pure React for frontend ui with Asp.Net Core used strictly for API/server for now.
 
 Getting Started:
