@@ -1,9 +1,10 @@
-﻿<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp1.0</TargetFramework>
     <PreserveCompilationContext>true</PreserveCompilationContext>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="**\*.cs" Exclude="$(GlobalExclude)" />
@@ -48,16 +49,13 @@
       <Version>6.0.0-beta902</Version>
     </PackageReference>
   </ItemGroup>
-
   <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
     <DefineConstants>$(DefineConstants);RELEASE</DefineConstants>
   </PropertyGroup>
-
   <Target Name="PrepublishScript" BeforeTargets="Publish" Condition=" '$(IsCrossTargetingBuild)' != 'true' ">
     <Exec Command="npm install" />
     <Exec Command="webpack --config webpack.config.vendor.js" />
     <Exec Command="webpack" />
   </Target>
-  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

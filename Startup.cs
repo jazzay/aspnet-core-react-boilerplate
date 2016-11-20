@@ -22,11 +22,15 @@ namespace WebApplicationBasic
             {
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
+
+            services.AddSwaggerGen();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory, IHostingEnvironment env)
         {
+            loggerFactory.AddConsole();
+
             app.UseDeveloperExceptionPage();
 
             if (env.IsDevelopment()) {
@@ -39,7 +43,6 @@ namespace WebApplicationBasic
             app.UseDefaultFiles();
             app.UseStaticFiles();
             
-            loggerFactory.AddConsole();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -50,6 +53,12 @@ namespace WebApplicationBasic
                     name: "spa-fallback",
                     defaults: new { controller = "Home", action = "Index" });
             });
+
+            // Enable middleware to serve generated Swagger as a JSON endpoint
+            app.UseSwagger();
+
+            // Enable middleware to serve swagger-ui assets (HTML, JS, CSS etc.)
+            app.UseSwaggerUi();
         }
 
         public static void Main(string[] args)
