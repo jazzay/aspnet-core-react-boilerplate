@@ -16,8 +16,10 @@ project.lock.json
 # The packages folder can be ignored because of Package Restore
 **/packages/*
 
+.vscode
 obj/
 bin/
 node_modules/
 typings/
 orleans.codegen.cs
+backup
