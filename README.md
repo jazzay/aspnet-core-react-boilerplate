@@ -13,10 +13,6 @@ git clone https://github.com/jazzay/aspnet-core-react-boilerplate
 ```
 From the console run 
 ```
-tsd install
-```
-Followed by
-```
 npm install
 ```
 Then for asp.net do:
