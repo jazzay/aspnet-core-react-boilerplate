@@ -13,12 +13,12 @@ module.exports = merge({
     },
     module: {
         loaders: [
-            { test: /\.ts(x?)$/, include: /ClientApp/, loader: 'babel-loader' },
-            { test: /\.ts(x?)$/, include: /ClientApp/, loader: 'ts-loader' }
+            { test: /\.ts(x?)$/, include: /app/, loader: 'babel-loader' },
+            { test: /\.ts(x?)$/, include: /app/, loader: 'ts-loader' }
         ]
     },
     entry: {
-        main: ['./ClientApp/boot.tsx'],
+        main: ['./app/boot.tsx'],
     },
     output: {
         path: path.join(__dirname, 'wwwroot', 'dist'),
